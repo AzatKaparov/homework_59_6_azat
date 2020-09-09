@@ -1,4 +1,5 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.models import User
 from django.shortcuts import render, get_object_or_404, redirect
 from django.db.models import Q
 from django.urls import reverse, reverse_lazy
@@ -45,6 +46,11 @@ class ProjectIndexView(LoginRequiredMixin, ListView):
 class ProjectView(LoginRequiredMixin, DetailView):
     template_name = 'project/project_view.html'
     model = Project
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['users'] = User.objects.all()
+        return context
 
 
 class ProjectCreateView(LoginRequiredMixin, CreateView):

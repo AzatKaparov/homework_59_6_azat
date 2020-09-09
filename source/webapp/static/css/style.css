@@ -26,3 +26,7 @@
 #center{
     text-align: center;
 }
+
+.users{
+    text-transform: capitalize;
+}

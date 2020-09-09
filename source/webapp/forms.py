@@ -4,10 +4,10 @@ from .models import Task, Status, Type, Project
 
 BROWSER_DATETIME_FORMAT = '%Y-%m-%dT%H:%M'
 
-# Извините, но более интересные проверки я просто не придумал
+
 def at_least_10(string):
-   if len(string) < 10:
-       raise ValidationError('Слишком коротко! Минимум 10 символов.')
+    if len(string) < 10:
+        raise ValidationError('Слишком коротко! Минимум 10 символов.')
 
 
 def at_least_50(string):
@@ -45,3 +45,13 @@ class ProjectTaskForm(forms.ModelForm):
     class Meta:
         model = Task
         exclude = ['project']
+
+
+class UserAddForm(forms.ModelForm):
+    class Meta:
+        model = Project
+        fields = ['user']
+        widgets = {
+            'user': forms.CheckboxSelectMultiple
+        }
+
