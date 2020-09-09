@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+    <form action="" method="post" class="text-center">
+    {% csrf_token %}
+    {% if has_error %}
+        <p class="form-error">Неверное имя пользователя или пароль.</p>
+    {% endif %}
+        <h1 class="my-5">Вход</h1>
+    {% include 'partial/form.html' with form_method='post' %}
+        </form>
+{% endblock %}

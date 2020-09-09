@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}Delete{% endblock %}
+
+{% block menu %}
+    <li class="nav-item active">
+        <a class="nav-link" href="{% url 'webapp:index' %}">Отмена</a>
+    </li>
+{% endblock %}
+
+{% block content %}
+    <h1 id="main-center">Вы уверены, что хотите удалить запись?</h1>
+    <form action="{% url "webapp:project_delete" project.pk %}" method="post">
+        {% csrf_token %}
+        <p><input type="submit" value="Да" id="submit" class="btn btn-warning mt-5 ml-5 btn-lg"></p>
+        <p><a class="btn btn-info ml-5 btn-lg" href="{% url 'webapp:project_index' %}">Нет</a></p>
+    </form>
+    <div class="card my-4" style="width: 18rem">
+        <div class="card-body">
+            <h2 class="mt-5">{{ project.name }}</h2>
+    {% if project.description %}
+        <p class="pre">{{ project.description }}</p>
+        <hr/>
+    {% endif %}
+    {% for i in project.tasks_project.all %}
+        <p>{{ i.pk }} | {{ i.summary }} <i class="card-status">{{ i.status }}</i> </p>
+        <p>
+            <a href="{% url 'webapp:view' i.pk %}">Подробнее</a>
+            <a href="{% url 'webapp:delete' i.pk %}">Удалить</a>
+            <a href="{% url 'webapp:update' i.pk %}">Обновить</a>
+        </p>
+    {% endfor %}
+    <hr/>
+    <p class="date">Дата начала: {{ project.start_date }}</p>
+    <p class="date">Дата окончания: {{ project.end_date }}</p>
+        </div>
+    </div>
+{% endblock %}

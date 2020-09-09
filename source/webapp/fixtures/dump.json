@@ -1,0 +1,460 @@
+[
+{
+  "model": "webapp.status",
+  "pk": 1,
+  "fields": {
+    "name": "\u041d\u043e\u0432\u044b\u0439"
+  }
+},
+{
+  "model": "webapp.status",
+  "pk": 2,
+  "fields": {
+    "name": "\u0412 \u043f\u0440\u043e\u0446\u0435\u0441\u0441\u0435"
+  }
+},
+{
+  "model": "webapp.status",
+  "pk": 3,
+  "fields": {
+    "name": "\u0412\u044b\u043f\u043e\u043b\u043d\u0435\u043d\u043e"
+  }
+},
+{
+  "model": "webapp.type",
+  "pk": 1,
+  "fields": {
+    "name": "\u0417\u0430\u0434\u0430\u0447\u0430"
+  }
+},
+{
+  "model": "webapp.type",
+  "pk": 2,
+  "fields": {
+    "name": "\u0411\u0430\u0433"
+  }
+},
+{
+  "model": "webapp.type",
+  "pk": 3,
+  "fields": {
+    "name": "\u0423\u043b\u0443\u0447\u0448\u0435\u043d\u0438\u0435"
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 6,
+  "fields": {
+    "summary": "\u0414\u043e\u0431\u0430\u0432\u0438\u0442\u044c \u0444\u0443\u043d\u043a\u0446\u0438\u044e \u04229 bug",
+    "description": "das,daskdasdmlkasmd\r\nflkdslkfamdsf\r\nasdflmklksadmfsad",
+    "status": 2,
+    "created_at": "2020-08-12",
+    "updated_at": "2020-08-23",
+    "project": 1,
+    "type": [
+      1
+    ]
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 7,
+  "fields": {
+    "summary": "\u0421\u0434\u0435\u043b\u0430\u0442\u044c \u043c\u0430\u043a\u0435\u0442 \u0441\u0430\u0439\u0442\u0430",
+    "description": "\u0444\u044b\u0432\u0444\u044b\u0432\u0444\u044b\u0432\u0444\u0444\u0431\u044c\u044b\u0432\u0442\u0444\u044b\u0431\u044c\u0432\u0442\u0444\u044b\r\n\u0432\u044b\u0444\u0432\u0434\u0444\u043b\u044b\u044c\u0432\u0434\u0444\u043b\u044b\u044c\u0432\u043b\u0444\u044b\u0432\u044c\u0444\u044b\u0434\u0412\u0444\u044b\u044c\u0434\u043b\u0432\u0444\u044c\u044b\u0434\r\n\u044b\u0444\u044c\u0434\u0432\u0444\u044b\u044c\u043b\u0432\u0444\u044c\u044b\u0434\u043b\u0432\u0444\u044c\u044b\u043b\u0434\u0432\u0444\u043b\u044b\r\n\u0432\u044c\u0444\u044b\u0434\u0432\u044c\u044b\r\n\u0432\u044c\u0434\u043b\u0444\u044b\u044c\u0432\r\n\u0444\u044b\u0434\u0432\u043b\u0444\u044b\u044c\u0432\u044b\u0444\u0432\u0444\u044b",
+    "status": 1,
+    "created_at": "2020-08-13",
+    "updated_at": "2020-08-23",
+    "project": 3,
+    "type": [
+      3
+    ]
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 8,
+  "fields": {
+    "summary": "\u0418\u0441\u043f\u0440\u0430\u0432\u0438\u0442\u044c \u043e\u0448\u0438\u0431\u043a\u0443 \u0432 \u0431\u0430\u0437\u043e\u0432\u043e\u043c \u0448\u0430\u0431\u043b\u043e\u043d\u0435",
+    "description": "\u0444\u044b\u0432\u0444\u044b\u0432\u0444\u044b\u0432\u0444\u044b\r\n\u0432\u0444\u044b\u0432\u0444\u044b\u0432\u0444\u044b\u0432\u0444\u044b\r\n\u0432\u0444\u044b\u0432\u0444\u044b\u0432\u0444\u044b\u0432\u0444\u044b\u0432\r\n\u0444\u044b\u0432\u0444\u044b\u0432\u0444\u044b\u0432\u0444\u044b\u0432\r\n\u0444\u044b\u0432\u0444\u044b\u0432\u0444\u044b\u0432\u0444\u044b\u0432\u0444\u044b\r\n\u0432\u0444\u044b\u0432\u0444\u044b\u0432\u0444\u044b\u0432\u0444\u044b",
+    "status": 2,
+    "created_at": "2020-08-14",
+    "updated_at": "2020-08-14",
+    "project": 1,
+    "type": [
+      3
+    ]
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 10,
+  "fields": {
+    "summary": "sdasf;alsmdl;asdas;d",
+    "description": "dasdklasldkasmd\r\nasmdasdmlaskdmas\r\ndmas\r\ndaslda,sl;da,s;dlas,\r\ndas,;lda,sl;d,asl;d,as\r\nd,asl;d,al;s,dlas,d,;asd",
+    "status": 2,
+    "created_at": "2020-08-14",
+    "updated_at": "2020-08-23",
+    "project": 2,
+    "type": [
+      1,
+      2
+    ]
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 11,
+  "fields": {
+    "summary": "asdasdasdasdasdasd bug",
+    "description": "rlkgjkarmgkmarlksmf;asmf;'\r\nasdfmmme fmasdf\r\nasdmflsadmflksadmkflmasdmkfas\r\nmasdlkfmaskdmfmasdlkfmasdlkf",
+    "status": 3,
+    "created_at": "2020-08-14",
+    "updated_at": "2020-08-23",
+    "project": 2,
+    "type": [
+      1
+    ]
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 12,
+  "fields": {
+    "summary": "lkarmglmsdkgmnaskmgf",
+    "description": "asd.;asl;,dlkaslds\r\nd'famdlksdfkmdklsdmfkas\r\nfmsdlkfmaskdmfkmdflksdam\r\nfsdkflmasdlkfmasdklfmkmdflk\r\nmflkasdmflksadmdjkeNFLKJS\r\nDNAFKJSDMNFKJASDKFNJKSAD",
+    "status": 3,
+    "created_at": "2020-08-15",
+    "updated_at": "2020-08-23",
+    "project": 1,
+    "type": [
+      1,
+      3
+    ]
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 13,
+  "fields": {
+    "summary": "\u041d\u0430\u043f\u0438\u0441\u0430\u0442\u044c \u0441\u0442\u0430\u0442\u044c\u044e \u043f\u0440\u043e JSON",
+    "description": "asdasdasdasdas\r\nasdasdasdasdas\r\nasdasdasdasdas\r\nasdasdasdasdas\r\nasdasdasdasdas\r\nasdasdasdasdas\r\nasdasdasdasdas",
+    "status": 1,
+    "created_at": "2020-08-23",
+    "updated_at": "2020-08-23",
+    "project": 1,
+    "type": []
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 14,
+  "fields": {
+    "summary": "asdasdasdas",
+    "description": "",
+    "status": 1,
+    "created_at": "2020-08-23",
+    "updated_at": "2020-08-23",
+    "project": 2,
+    "type": []
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 15,
+  "fields": {
+    "summary": "asdasdasdas",
+    "description": "",
+    "status": 1,
+    "created_at": "2020-08-23",
+    "updated_at": "2020-08-23",
+    "project": 2,
+    "type": []
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 16,
+  "fields": {
+    "summary": "\u041d\u0430\u043f\u0438\u0441\u0430\u0442\u044c \u0441\u0442\u0430\u0442\u044c\u044e \u043f\u0440\u043e JSON",
+    "description": "asdasdasdasasdasdasdas\r\nasdasdasdas\r\nasdasdasdas\r\nasdasdasdasasdasdasdas\r\nasdasdasdas\r\nasdasdasdas\r\nasdasdasdas\r\nasdasdasdas\r\nasdasdasdasasdasdasdasasdasdasdasasdasdasdas",
+    "status": 2,
+    "created_at": "2020-08-23",
+    "updated_at": "2020-08-23",
+    "project": 2,
+    "type": []
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 17,
+  "fields": {
+    "summary": "\u0421\u0434\u0435\u043b\u0430\u0442\u044c \u043c\u0430\u043a\u0435\u0442 \u0441\u0430\u0439\u0442\u0430",
+    "description": "asdasdasdasdasasdasdasdasdas\r\nasdasdasdasdasasdasdasdasdasasdasdasdasdas\r\nasdasdasdasdas\r\nasdasdasdasdas\r\nasdasdasdasdas\r\nasdasdasdasdas",
+    "status": 1,
+    "created_at": "2020-08-23",
+    "updated_at": "2020-08-23",
+    "project": 3,
+    "type": []
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 18,
+  "fields": {
+    "summary": "asdasvberfbdsad",
+    "description": "",
+    "status": 1,
+    "created_at": "2020-08-23",
+    "updated_at": "2020-08-23",
+    "project": 3,
+    "type": [
+      1,
+      2
+    ]
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 19,
+  "fields": {
+    "summary": "asdasdasdasdas",
+    "description": "asdasdasdasdas",
+    "status": 1,
+    "created_at": "2020-08-23",
+    "updated_at": "2020-08-23",
+    "project": 3,
+    "type": [
+      3
+    ]
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 20,
+  "fields": {
+    "summary": "jfygliygl,fyukj",
+    "description": "",
+    "status": 3,
+    "created_at": "2020-08-23",
+    "updated_at": "2020-08-23",
+    "project": 2,
+    "type": [
+      2
+    ]
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 21,
+  "fields": {
+    "summary": "fghjdyjstjsrtmj5ajn",
+    "description": "",
+    "status": 1,
+    "created_at": "2020-08-23",
+    "updated_at": "2020-08-23",
+    "project": 1,
+    "type": [
+      3
+    ]
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 22,
+  "fields": {
+    "summary": "rgfdjq35y7u4w56je57k",
+    "description": "",
+    "status": 1,
+    "created_at": "2020-08-23",
+    "updated_at": "2020-08-23",
+    "project": 3,
+    "type": [
+      2
+    ]
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 23,
+  "fields": {
+    "summary": "0ogk0234gmvakromv",
+    "description": "",
+    "status": 1,
+    "created_at": "2020-08-23",
+    "updated_at": "2020-08-23",
+    "project": 2,
+    "type": [
+      3
+    ]
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 24,
+  "fields": {
+    "summary": "jiwdnvijwJENVKNJv",
+    "description": "QEWJVBHNBHAESJ\r\nSNDvjnEKJVBKJsnV\r\nANvkn ENV VHJE\r\neMNC'aENVKJWENvkjnawsv\r\nSENVWnvhjWBEVJNWEB;hvnEW",
+    "status": 1,
+    "created_at": "2020-08-23",
+    "updated_at": "2020-08-23",
+    "project": 2,
+    "type": [
+      2
+    ]
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 25,
+  "fields": {
+    "summary": "bwljkrjknvlrjsvnasvarsrbWRB",
+    "description": "WRbENVIJEBJWENB\r\nsdmvkjasdnkjvnjD\r\nANDvkjsdnkvjnasnvks\r\ndnvljsdnbjksnvjkWE\r\nVCNEWvjneWEV",
+    "status": 1,
+    "created_at": "2020-08-23",
+    "updated_at": "2020-08-23",
+    "project": 1,
+    "type": [
+      1
+    ]
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 26,
+  "fields": {
+    "summary": "TETGCASLKCNBJKASNKCLQW",
+    "description": "AFBASJVJASDNJKVNKASDM\r\nSDNJVKSDKLJBVJKASDNKVNJBSADJ\r\nVNSDKJVNSD VHJJNASDVJKASDNV\r\nASDNVJSDNVKJSDVNASD\r\nDVNASDLVNASDJLVNJKASDNV",
+    "status": 1,
+    "created_at": "2020-08-23",
+    "updated_at": "2020-08-23",
+    "project": 2,
+    "type": [
+      1
+    ]
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 27,
+  "fields": {
+    "summary": "jasnmSDVHASDJNVJASILVNBW",
+    "description": "asffvjsdkvnjhvnbnndvj bnsjdnmncb jadkjklkmnk",
+    "status": 1,
+    "created_at": "2020-08-23",
+    "updated_at": "2020-08-23",
+    "project": 2,
+    "type": [
+      3
+    ]
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 28,
+  "fields": {
+    "summary": "jvhnsadkj vjbsadnjvsdaskjvnsbjvnjdjbknasldnvbhsdjn;l kjdlvn kh",
+    "description": "sdfndsb vsdjvnbadfjsda\r\nf;DSDKVN ASDNBDNJ EVbewan\r\nvasnb cvnsndv sbv sdajkv as'\r\nvsbvnsnvjb sdbnfcnj evew\r\nsvbWNBVJKWE vnWJEELKJ WEBNVNLKAJE",
+    "status": 1,
+    "created_at": "2020-08-23",
+    "updated_at": "2020-08-23",
+    "project": 1,
+    "type": [
+      2
+    ]
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 29,
+  "fields": {
+    "summary": "SJHKDJVJBDKVLNSD",
+    "description": "VDSJSDKJBCENWWBCJKEBSUINC\r\nNKFJSDANFJBSDF CHSDCN \r\nSDFKJENFJKQKCN DSJKJBVAS\r\nFASDIHVNEWUFVGEWJF\r\nSADIUFHESNJBCHDIU\r\nQEFJKSDAANFJKNADFBWIHNFJLWEFASD",
+    "status": 1,
+    "created_at": "2020-08-23",
+    "updated_at": "2020-08-23",
+    "project": 1,
+    "type": [
+      3
+    ]
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 30,
+  "fields": {
+    "summary": "SDJNSDLKVBHJSDBJVNBHSDSNA'SVSADV",
+    "description": "SGOWEJFIHDJGHOI4HG0A834UTJ[G2J3\r\nAW4N2UHR9Q84AIJHROIA2T-J[Q34'TQ34;FJ.KWA4;HOIEFVBGHQKJviljenKDA \r\ncxcfghjkjnbvcxsdrtyujnb cfghjkjhgcx",
+    "status": 1,
+    "created_at": "2020-08-23",
+    "updated_at": "2020-08-23",
+    "project": 1,
+    "type": [
+      1
+    ]
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 31,
+  "fields": {
+    "summary": "RAKGJRKFLVNSLVSdvsdBD",
+    "description": "AbsdbEKWJENfc;meaScvaSvassdcaSdasds",
+    "status": 1,
+    "created_at": "2020-08-23",
+    "updated_at": "2020-08-23",
+    "project": 2,
+    "type": [
+      1
+    ]
+  }
+},
+{
+  "model": "webapp.project",
+  "pk": 1,
+  "fields": {
+    "start_date": "2020-08-23",
+    "end_date": "2020-08-31",
+    "name": "\u0422\u0435\u0441\u0442\u043e\u0432\u044b\u0439 \u043f\u0440\u043e\u0435\u043a\u0442",
+    "description": "\u0422\u0435\u0441\u0442 \u0442\u0435\u0441\u0442 \u0442\u0435\u0441\u0442 \r\n\u0442\u0435\u0441\u0442 \u0442\u0435\u0441\u0442 \u0442\u0435\u0441\u0442 \u0442\u0435\u0441\u0442\r\n \u0442\u0435\u0441\u0442 \u0442\u0435\u0441\u0442 \u0442\u0435\u0441\u0442 \u0442\u0435\u0441\u0442 \u0442\u0435\u0441\u0442"
+  }
+},
+{
+  "model": "webapp.project",
+  "pk": 2,
+  "fields": {
+    "start_date": "2020-08-23",
+    "end_date": "2020-08-30",
+    "name": "\u041f\u0440\u043e\u0435\u043a\u0442 \u043a\u0430\u043a\u043e\u0439_\u043d\u0438\u0431\u0443\u0434\u044c",
+    "description": "\u0444\u044b\u0432\u0444\u044b\u0432\u0444\u044b\u0432\u044b\u0444\u0432\u0444\u044b"
+  }
+},
+{
+  "model": "webapp.project",
+  "pk": 3,
+  "fields": {
+    "start_date": "2020-08-23",
+    "end_date": "2020-08-30",
+    "name": "Asd",
+    "description": "asdasdasdasdasdasdas\r\nasdasdasdasdas"
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$150000$b7PamOyZ1gl5$EyIQKAY2NsTW8yWqrnsFrHOme9/W1ZiWvFRQZIysSzI=",
+    "last_login": "2020-08-23T08:49:29.236Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "admin@admin.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2020-08-12T07:37:09.357Z",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]
