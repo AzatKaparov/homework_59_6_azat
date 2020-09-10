@@ -9,6 +9,15 @@
 
 {% block content %}
     <h1 class="mt-5">{{ project.name }}</h1>
+    {% if user.is_authenticated %}
+        {% if perms.webapp.delete_project %}
+    <p><a class="delete-button" href="{% url 'webapp:project_delete' project.pk %}">Удалить</a><br/>
+        {% endif %}
+        {% if perms.webapp.change_project %}
+    <a class="update-button" href="{% url 'webapp:project_update' project.pk %}">Обновить</a><br/>
+        {% endif %}
+        {% endif %}
+    <a class="back-button" href="{% url 'webapp:project_index' %}">Назад</a></p>
     {% if project.description %}
         <p class="pre">{{ project.description }}</p>
         <hr/>
@@ -17,26 +26,28 @@
     <a class="btn btn-primary my-3" href="{% url 'webapp:add_user' project.pk %}">Редактировать список пользователей</a>
     <div class="mb-4">
     {% for i in project.user.all %}
-        <h4 class="users">{{ i.username }}</h4>
+        <h5 class="users">- {{ i.username }}</h5>
     {% endfor %}
     <hr/>
+    {% if perms.webapp.add_task %}
+    <a class="btn btn-primary" href="{% url 'webapp:create_task_project' project.pk %}">Добавить задачу в проект</a>
+    {% endif %}
     </div>
     {% for i in project.tasks_project.all %}
         <p>{{ i.pk }} | {{ i.summary }} <i class="card-status">{{ i.status }}</i> </p>
         <p><a href="{% url 'webapp:view' i.pk %}">Подробнее</a>
             {% if user.is_authenticated %}
+                {% if perms.webapp.delete_task %}
             <a href="{% url 'webapp:delete' i.pk %}">Удалить</a>
+                    {% endif %}
+                {% if perms.webapp.change_task %}
             <a href="{% url 'webapp:update' i.pk %}">Обновить</a>
+                {% endif %}
             {% endif %}
         </p>
     {% endfor %}
     <hr/>
     <p class="date">Дата начала: {{ project.start_date }}</p>
     <p class="date">Дата окончания: {{ project.end_date }}</p>
-    {% if user.is_authenticated %}
-    <a class="btn btn-primary" href="{% url 'webapp:create_task_project' project.pk %}">Добавить задачу в проект</a>
-    <p class="mt-5"></p><a class="delete-button ml-5 px-3 mb-4" href="{% url 'webapp:project_delete' project.pk %}">Удалить</a><br/>
-    <a class="update-button ml-5 px-3 mb-4" href="{% url 'webapp:project_update' project.pk %}">Обновить</a><br/>
-    {% endif %}
-    <a class="back-button ml-5 px-3 mb-4" href="{% url 'webapp:project_index' %}">Назад</a></p>
+
 {% endblock %}

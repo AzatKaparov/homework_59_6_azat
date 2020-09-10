@@ -1,0 +1,13 @@
+У меня включены валидаторы, и я забыл как их отключить
+
+Менеджер:
+username: manager
+password: mana700lvl
+
+Капитан:
+username: lead
+password: lead180lvl
+
+Разработчик:
+username: dev
+password: dev100lvl

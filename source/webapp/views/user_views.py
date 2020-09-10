@@ -1,18 +1,17 @@
-from django.contrib.auth.mixins import LoginRequiredMixin
-from django.contrib.auth.models import User
-from django.shortcuts import render, get_object_or_404, redirect
-from django.db.models import Q
-from django.urls import reverse, reverse_lazy
-from django.utils.http import urlencode
-from webapp.models import Project, Task
-from django.views.generic import ListView, DetailView, CreateView, DeleteView, UpdateView
-from webapp.forms import SimpleSearchForm, ProjectForm, TaskForm, ProjectTaskForm, UserAddForm
+from django.contrib.auth.mixins import UserPassesTestMixin, PermissionRequiredMixin
+from django.shortcuts import get_object_or_404, redirect
+from webapp.models import Project
+from django.views.generic import UpdateView
+from webapp.forms import UserAddForm
 
 
-class AddUserProject(UpdateView):
+class AddUserProject(PermissionRequiredMixin, UpdateView):
     model = Project
     template_name = 'user/add_user.html'
     form_class = UserAddForm
+    permission_denied_message = 'Отказано в доступе'
+    permission_required = ('webapp.add_task',)
+    # удаление юзера из списка чекбоксов по сути и есть удаление
 
     def form_valid(self, form):
         project = get_object_or_404(Project, pk=self.kwargs.get('pk'))
@@ -24,6 +23,7 @@ class AddUserProject(UpdateView):
         form.save_m2m()
         return redirect('webapp:project_view', pk=project.pk)
 
-
+    def has_permission(self):
+        return Project.objects.filter(user=self.request.user, pk=self.get_object().pk) and super().has_permission()
 
 

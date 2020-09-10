@@ -1,4 +1,4 @@
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin, PermissionRequiredMixin
 from django.contrib.auth.models import User
 from django.shortcuts import render, get_object_or_404, redirect
 from django.db.models import Q
@@ -50,10 +50,13 @@ class ProjectView(LoginRequiredMixin, DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['users'] = User.objects.all()
+        user = self.request.user
+        object = self.get_object()
+        
         return context
 
 
-class ProjectCreateView(LoginRequiredMixin, CreateView):
+class ProjectCreateView(UserPassesTestMixin, CreateView):
     model = Project
     form_class = ProjectForm
     template_name = 'project/project_create.html'
@@ -61,11 +64,21 @@ class ProjectCreateView(LoginRequiredMixin, CreateView):
     def get_success_url(self):
         return reverse('webapp:project_view', kwargs={'pk': self.object.pk})
 
+    def test_func(self):
+        manager = User.objects.get(username='manager')
+        return self.request.user == manager
 
-class ProjectTaskCreateView(LoginRequiredMixin, CreateView):
+
+class ProjectTaskCreateView(PermissionRequiredMixin, CreateView):
     model = Task
     template_name = 'project/task_in_project_create.html'
     form_class = ProjectTaskForm
+    permission_denied_message = 'Отказано в доступе'
+    permission_required = 'webapp.add_task'
+
+    def has_permission(self):
+        project = get_object_or_404(Project, pk=self.kwargs.get('pk'))
+        return super().has_permission() and self.request.user in project.user.all()
 
     def form_valid(self, form):
         project = get_object_or_404(Project, pk=self.kwargs.get('pk'))
@@ -76,16 +89,26 @@ class ProjectTaskCreateView(LoginRequiredMixin, CreateView):
         return redirect('webapp:project_view', pk=project.pk)
 
 
-class ProjectDeleteView(DeleteView):
+class ProjectDeleteView(UserPassesTestMixin, DeleteView):
     template_name = 'project/project_delete.html'
     model = Project
     success_url = reverse_lazy('webapp:project_index')
+    permission_denied_message = 'Отказано в доступе'
+
+    def test_func(self):
+        manager = User.objects.get(username='manager')
+        return self.request.user == manager
 
 
-class ProjectUpdateView(UpdateView):
+class ProjectUpdateView(UserPassesTestMixin, UpdateView):
     model = Project
     form_class = ProjectForm
     template_name = 'project/project_update.html'
+    permission_denied_message = 'Отказано в доступе'
+
+    def test_func(self):
+        manager = User.objects.get(username='manager')
+        return self.request.user == manager
 
     def get_success_url(self):
         return reverse('webapp:project_view', kwargs={'pk': self.object.pk})

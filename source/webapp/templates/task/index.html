@@ -23,8 +23,12 @@
                     <p class="date">Обновлено: {{ task.updated_at }}</p>
                     <a href="{% url 'webapp:view' task.pk%}">Подробнее</a>
                 {% if user.is_authenticated %}
+                    {% if perms.webapp.delete_task %}
                     <a href="{% url 'webapp:delete' task.pk%}">Удалить</a>
+                        {% endif %}
+                    {% if perms.webapp.change_task %}
                     <a href="{% url 'webapp:update' task.pk %}">Обновить</a>
+                        {% endif %}
                 {% endif %}
                 </div>
             </div>

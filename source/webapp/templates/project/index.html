@@ -3,7 +3,7 @@
 {% block title %}Main{% endblock %}
 
 {% block content %}
-    <h1 id="center" class="mt-5">Список задач</h1>
+    <h1 id="center" class="mt-5">Список проектов</h1>
 {% if is_paginated %}
     <h3 id="center">Вы сейчас на {{ page_obj.number }} странице</h3>
    {% include 'partial/pagination.html' %}
@@ -18,8 +18,12 @@
                     <p class="date">Дата окончания: {{ project.end_date }}</p>
                     <a href="{% url 'webapp:project_view' project.pk%}">Подробнее</a>
                     {% if user.is_authenticated %}
+                        {% if perm.webapp.delete_project %}
                     <a href="{% url 'webapp:project_delete' project.pk%}">Удалить</a>
+                        {% endif %}
+                        {% if perm.webapp.change_project %}
                     <a href="{% url 'webapp:project_update' project.pk %}">Обновить</a>
+                            {% endif %}
                     {% endif %}
                 </div>
             </div>

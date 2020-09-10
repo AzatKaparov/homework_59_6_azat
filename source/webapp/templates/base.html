@@ -23,18 +23,17 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="{% url 'webapp:index' %}">На главную <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="{% url 'webapp:project_index' %}">На главную <span class="sr-only">(current)</span></a>
       </li>
     <li class="nav-item active">
-        <a class="nav-link" href="{% url 'webapp:project_index' %}">Список проектов</a>
+        <a class="nav-link" href="{% url 'webapp:index' %}">Список всех задач</a>
       </li>
     {% if user.is_authenticated %}
-      <li class="nav-item active">
-        <a class="nav-link" href="{% url 'webapp:create' %}">Добавить задачу</a>
-      </li>
-    <li class="nav-item active">
-        <a class="nav-link" href="{% url 'webapp:project_create'%}">Добавить проект</a>
-      </li>
+        {% if perms.webapp.add_project %}
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'webapp:project_create'%}">Добавить проект</a>
+            </li>
+        {% endif %}
     <li class="nav-item active">
         <a class="nav-link" href="{% url 'accounts:logout'%}?next={{ request.get_full_path }}">Выход</a>
       </li>

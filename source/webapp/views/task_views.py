@@ -1,9 +1,9 @@
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin, PermissionRequiredMixin
 from django.shortcuts import get_object_or_404
 from django.db.models import Q
 from django.urls import reverse, reverse_lazy
 from django.utils.http import urlencode
-from webapp.models import Task
+from webapp.models import Task, Project
 from django.views.generic import TemplateView, FormView, ListView, DeleteView, UpdateView
 from webapp.forms import TaskForm, SimpleSearchForm
 
@@ -54,31 +54,27 @@ class TaskView(LoginRequiredMixin, TemplateView):
         return context
 
 
-class TaskCreateView(LoginRequiredMixin, FormView):
-    template_name = 'task/task_create.html'
-    form_class = TaskForm
-
-    def form_valid(self, form):
-        self.task = form.save()
-        return super().form_valid(form)
-
-    def get_redirect_url(self):
-        return reverse('webapp:view', kwargs={'pk': self.task.pk})
-
-    def get_success_url(self):
-        return reverse('webapp:view', kwargs={'pk': self.task.pk})
-
-
-class TaskDeleteView(LoginRequiredMixin, DeleteView):
+class TaskDeleteView(PermissionRequiredMixin, DeleteView):
     template_name = 'task/task_delete.html'
     model = Task
     success_url = reverse_lazy('webapp:index')
+    permission_required = 'webapp.delete_task'
+
+    def has_permission(self):
+        task = self.get_object()
+        return super().has_permission() and self.request.user in task.project.user.all()
 
 
-class TaskUpdateView(LoginRequiredMixin, UpdateView):
+class TaskUpdateView(PermissionRequiredMixin, UpdateView):
     template_name = 'task/task_update.html'
     form_class = TaskForm
     model = Task
+    permission_required = 'webapp.change_task'
 
     def get_success_url(self):
         return reverse('webapp:view', kwargs={'pk': self.object.pk})
+
+    def has_permission(self):
+        task = self.get_object()
+        return super().has_permission() and self.request.user in task.project.user.all()
+

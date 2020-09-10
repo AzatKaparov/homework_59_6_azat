@@ -5,12 +5,16 @@
 
 {% block menu %}
     {% if user.is_authenticated %}
+        {% if perms.webapp.delete_task %}
     <li class="nav-item active">
         <a class="nav-link" href="{% url 'webapp:delete' task.pk %}">Удалить</a>
     </li>
+            {% endif %}
+        {% if perms.webapp.change_task %}
     <li class="nav-item active">
         <a class="nav-link" href="{% url 'webapp:update' task.pk %}">Обновить</a>
     </li>
+            {% endif %}
     {% endif %}
 {% endblock %}
 
@@ -33,8 +37,11 @@
         </div>
     </div>
     {% if user.is_authenticated %}
+        {% if perms.webapp.delete_task %}
     <p class="mt-5"></p><a class="delete-button ml-5 px-3 mb-4" href="{% url 'webapp:delete' task.pk %}">Удалить</a><br/>
-    <a class="update-button ml-5 px-3 mb-4" href="{% url 'webapp:update' task.pk %}">Обновить</a><br/>
+        {% endif %}
+        {% if perms.webapp.change_task %}
+        <a class="update-button ml-5 px-3 mb-4" href="{% url 'webapp:update' task.pk %}">Обновить</a><br/>
     {% endif %}
     <a class="back-button ml-5 px-3 mb-4" href="{% url 'webapp:index' %}">Назад</a></p>
 {% endblock %}
