@@ -49,7 +49,7 @@
     "description": "das,daskdasdmlkasmd\r\nflkdslkfamdsf\r\nasdflmklksadmfsad",
     "status": 2,
     "created_at": "2020-08-12",
-    "updated_at": "2020-08-23",
+    "updated_at": "2020-09-09",
     "project": 1,
     "type": [
       1
@@ -416,7 +416,10 @@
     "start_date": "2020-08-23",
     "end_date": "2020-08-31",
     "name": "\u0422\u0435\u0441\u0442\u043e\u0432\u044b\u0439 \u043f\u0440\u043e\u0435\u043a\u0442",
-    "description": "\u0422\u0435\u0441\u0442 \u0442\u0435\u0441\u0442 \u0442\u0435\u0441\u0442 \r\n\u0442\u0435\u0441\u0442 \u0442\u0435\u0441\u0442 \u0442\u0435\u0441\u0442 \u0442\u0435\u0441\u0442\r\n \u0442\u0435\u0441\u0442 \u0442\u0435\u0441\u0442 \u0442\u0435\u0441\u0442 \u0442\u0435\u0441\u0442 \u0442\u0435\u0441\u0442"
+    "description": "\u0422\u0435\u0441\u0442 \u0442\u0435\u0441\u0442 \u0442\u0435\u0441\u0442 \r\n\u0442\u0435\u0441\u0442 \u0442\u0435\u0441\u0442 \u0442\u0435\u0441\u0442 \u0442\u0435\u0441\u0442\r\n \u0442\u0435\u0441\u0442 \u0442\u0435\u0441\u0442 \u0442\u0435\u0441\u0442 \u0442\u0435\u0441\u0442 \u0442\u0435\u0441\u0442",
+    "user": [
+      6
+    ]
   }
 },
 {
@@ -426,7 +429,10 @@
     "start_date": "2020-08-23",
     "end_date": "2020-08-30",
     "name": "\u041f\u0440\u043e\u0435\u043a\u0442 \u043a\u0430\u043a\u043e\u0439_\u043d\u0438\u0431\u0443\u0434\u044c",
-    "description": "\u0444\u044b\u0432\u0444\u044b\u0432\u0444\u044b\u0432\u044b\u0444\u0432\u0444\u044b"
+    "description": "\u0444\u044b\u0432\u0444\u044b\u0432\u0444\u044b\u0432\u044b\u0444\u0432\u0444\u044b",
+    "user": [
+      7
+    ]
   }
 },
 {
@@ -436,25 +442,11 @@
     "start_date": "2020-08-23",
     "end_date": "2020-08-30",
     "name": "Asd",
-    "description": "asdasdasdasdasdasdas\r\nasdasdasdasdas"
-  }
-},
-{
-  "model": "auth.user",
-  "pk": 1,
-  "fields": {
-    "password": "pbkdf2_sha256$150000$b7PamOyZ1gl5$EyIQKAY2NsTW8yWqrnsFrHOme9/W1ZiWvFRQZIysSzI=",
-    "last_login": "2020-08-23T08:49:29.236Z",
-    "is_superuser": true,
-    "username": "admin",
-    "first_name": "",
-    "last_name": "",
-    "email": "admin@admin.com",
-    "is_staff": true,
-    "is_active": true,
-    "date_joined": "2020-08-12T07:37:09.357Z",
-    "groups": [],
-    "user_permissions": []
+    "description": "asdasdasdasdasdasdas\r\nasdasdasdasdas",
+    "user": [
+      7,
+      8
+    ]
   }
 }
 ]
